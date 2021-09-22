@@ -8,6 +8,7 @@
 import Foundation
 
 class DataSource {
+    
     static let shared = DataSource()
     
     let presets = [
@@ -70,9 +71,10 @@ class DataSource {
         "easeOutBack",
         "easeInOutBack"
     ]
-    let force = Float.random(in: 0.5...1)
-    let duration = Float.random(in: 1...3)
-    let delay = Float.random(in: 0.5...2)
     
+//    let force = Float.random(in: 0.5...2)
+//    let duration = Float.random(in: 1...3)
+//    let delay = Float.random(in: 0.5...1)
+   
     private init() {}
 }

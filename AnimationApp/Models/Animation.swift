@@ -18,16 +18,19 @@ struct Animation {
 extension Animation {
     
     static func getAnimation() -> Animation {
-        let presets = DataSource.shared.presets.shuffled()
-        let curves = DataSource.shared.curves.shuffled()
-        
         let animation = Animation(
-            preset: presets.first ?? "",
-            curve: curves.first ?? "",
-            force: DataSource.shared.force,
-            duration: DataSource.shared.duration,
-            delay: DataSource.shared.delay
+            preset: DataSource.shared.presets.shuffled().first ?? "",
+            curve: DataSource.shared.curves.shuffled().first ?? "",
+            force: Float.random(in: 0.5...2), //DataSource.shared.force,
+            duration: Float.random(in: 1...3), //DataSource.shared.duration,
+            delay: Float.random(in: 0.5...1) //DataSource.shared.delay
         )
+        /*
+         Не знаю что случилось, но изначально всё работало с сервисным слоем
+         как надо (значения каждый раз обновлялись). После обновления икскода,
+         пришлось перенести вычисления сюда. Хотя скорее всего, я просто не вижу
+         чего-то очевидного - глаза замылились)
+         */
         
         return animation
     }
