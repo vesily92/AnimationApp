@@ -16,6 +16,7 @@ struct Animation {
 }
 
 extension Animation {
+    
     static func getAnimation() -> Animation {
         let presets = DataSource.shared.presets.shuffled()
         let curves = DataSource.shared.curves.shuffled()
@@ -25,7 +26,8 @@ extension Animation {
             curve: curves.first ?? "",
             force: DataSource.shared.force,
             duration: DataSource.shared.duration,
-            delay: DataSource.shared.delay)
+            delay: DataSource.shared.delay
+        )
         
         return animation
     }
